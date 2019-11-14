@@ -1,0 +1,74 @@
+{% extends 'layout.html'%}
+{% block body %}
+<br><br><br>
+<img src="/static/img/Larva.jpg"  class="img-rounded">
+<br><br>
+<div class="actua">
+    <h5>Útlima actualización: {{ fecha }}</h5>
+</div>
+<div class="text-center">
+ <table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Tienda</th>
+      <th scope="col">CSV</th>
+      <th scope="col">Productos</th>
+      <th scope="col">Categorías</th>
+      <th scope="col">Marcas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><a href="/claroshop">Claroshop</a></th>
+      <td><a href="/getClaroshopCSV" target="blank"><button class='btn btn-link'>Claroshop.csv</button></a></td>
+      <td>{{noItemsC}}</td>
+      <td>{{noMarcasC}}</td>
+      <td>{{noCatsC}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row"><a href="/sanpablo">Farmacia San Pablo</a></th>
+      <td><a href="/getSanpabloCSV" target="blank"><button class='btn btn-link'>SanPablo.csv</button></a></td>
+      <td><p>{{noItemsSan}}</p></td>
+      <td>{{noCatsSan}}</td>
+      <td>{{noMarcasSan}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row"><a href="/linio">Linio</a></th>
+      <td><a href="/getLinioCSV" target="blank"><button class='btn btn-link'>Linio.csv</button></a></td>
+      <td><p>{{noProdLinio}}</p></td>
+      <td>{{catLinio}}</td>
+      <td>{{marcasLinio}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row"><a href="/liverpool">Liverpool</a></th>
+      <td><a href="/getLiverpoolCSV" target="blank"><button class='btn btn-link'>Liverpool.csv</button></a></td>
+      <td>{{noItemsLiver}}</td>
+      <td>{{noCatsLiver}}</td>
+      <td>{{noMarcasLiver}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row"><a href="#">Mercado Libre</a></th>
+      <td><a href="/getMercadoCSV" target="blank"><button class='btn btn-link'>MercadoLibre.csv</button></a></td>
+      <td>{{noItemsMer}}</td>
+      <td>{{noCatsMer}}</td>
+      <td>{{noMarcasMer}}</td>
+    </tr>
+  </tbody>
+  </tbody>
+</table>
+
+    <!--<div class="chartaa" id="bargraphaa">
+    	<script>
+        	var graphs = {{plot | safe}};
+        	Plotly.plot('bargraphaa',graphs,{});
+    	</script>
+	</div> -->
+</div>
+
+{% endblock %}
+
+
